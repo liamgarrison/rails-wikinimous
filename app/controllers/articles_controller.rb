@@ -28,11 +28,13 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   def update
     @article.update(article_params)
+    redirect_to article_path(@article)
   end
 
   # DELETE /articles/1
   def destroy
     @article.destroy
+    redirect_to articles_path
   end
 
   private

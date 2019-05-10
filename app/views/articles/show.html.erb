@@ -7,8 +7,12 @@
       <%= @article.content %>
     </p>
     <h3>
-      <i class="fas fa-pencil-alt mr-3"></i>
-      <i class="fas fa-trash-alt"></i>
+      <%= link_to edit_article_path(@article), class: 'text-decoration-none' do %>
+        <i class="fas fa-pencil-alt mr-3"></i>
+      <% end %>
+      <%= link_to article_path(@article), method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="fas fa-trash-alt"></i>
+      <% end %>
     </h3>
   </div>
 </div>
