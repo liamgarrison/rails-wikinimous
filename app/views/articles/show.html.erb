@@ -4,7 +4,7 @@
       <%= @article.title %>
     </h1>
     <p>
-      <%= @article.content %>
+      <%= sanitize(@article.content) %>
     </p>
     <h3>
       <%= link_to edit_article_path(@article), class: 'text-decoration-none' do %>

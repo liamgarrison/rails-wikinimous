@@ -8,6 +8,9 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1
   def show
+    # Convert content to markdown
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
+    @article.content = markdown.render(@article.content)
   end
 
   # GET /articles/new
