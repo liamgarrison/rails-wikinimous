@@ -1,8 +1,14 @@
 <div class="container">
-  <h1 class="border-bottom pb-4 mb-4">
-    <%= @article.title %>
-  </h1>
-  <p>
-    <%= @article.content %>
-  </p>
+  <div class="content">
+    <h1 class="border-bottom pb-4 mb-4">
+      <%= @article.title %>
+    </h1>
+    <p>
+      <%= @article.content %>
+    </p>
+    <h3>
+      <i class="fas fa-pencil-alt mr-3"></i>
+      <i class="fas fa-trash-alt"></i>
+    </h3>
+  </div>
 </div>
