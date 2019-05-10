@@ -21,7 +21,8 @@ class ArticlesController < ApplicationController
 
   # POST /articles
   def create
-    @article = Article.new(article_params)
+    @article = Article.create(article_params)
+    redirect_to articles_path
   end
 
   # PATCH/PUT /articles/1
@@ -43,6 +44,6 @@ class ArticlesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def article_params
-    params.fetch(:article, {})
+    params.require(:article).permit(:title, :content, :id)
   end
 end
